@@ -69,3 +69,24 @@ cacheSolve <- function(x, ...) {
 
     i
 }
+
+## TEST THE CODE ##
+
+a <- matrix(c(4,3,3,2), nrow = 2, ncol = 2)
+## creates a 2x2 invertable matrix
+
+b <- makeCacheMatrix(a)
+## passes the 'a' matrix to the makeCacheMatrix code
+
+cacheSolve(b)
+## passes 'b' (the four functions created by makeCacheMatrix)
+## to cacheSolve
+
+## inverse of matrix 'a' should be:
+##     [,1] [,2]
+## [1,]  -2   3
+## [2,]   3  -4
+
+## reenter cacheSolve to test what happens when the inverse 
+## matrix already exists (should return message "getting cached 
+## data" and then return the same inverse matrix as above)
